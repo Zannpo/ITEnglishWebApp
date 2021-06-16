@@ -1,0 +1,21 @@
+{
+    "sshfs.configs": [
+      
+      {
+          // Unique id, which results in ssh://serverlogs/
+          "name": "Manticore",
+          // The label to usually display (uses the name by default)
+          "label": "AI 2021",
+          // Remote folder to use as root (default is /)
+          "root": "/home/students/inf2021/zanpodol/public_html/",
+          // Host to connect to (domain / IPv4 / IPv6)
+          "host": "212.191.66.19",
+          // Port to connect to (default is 22)
+          "port": 22,
+          // Username to login with
+          "username": "zanpodol",
+          "password": true,
+          
+      }
+    ],
+  }
