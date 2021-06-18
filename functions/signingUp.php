@@ -11,21 +11,27 @@ if($_POST['haslo'] <> $_POST['powtorzhaslo'])
 
     $login = htmlspecialchars($_POST['login']);
     $haslo = htmlspecialchars($_POST['haslo']);
+    $email = htmlspecialchars($_POST['email']);
+    $telefon = htmlspecialchars($_POST['telefon']);
     
     //Hashowanie hasła
     $haslo = password_hash($haslo,PASSWORD_DEFAULT);
 
+
+//Sprawdzenie ilości wystąpień danego użytkownika. Czy taki login już istnieje
 $queryToCheck ="SELECT * FROM users WHERE login = '".$_POST['login']."'";   
 $result = mysqli_query($link,$queryToCheck);
 
 $number = 0;
-//Sprawdzenie ilości wystąpień danego użytkownika. Czy taki login już istnieje
+
 while($row=mysqli_fetch_array($result)){
     
   if($row['login'] == $login)
   {
     $number = $number + 1;
   }
+
+}
   
 }
 
@@ -33,11 +39,14 @@ if($number == 0)
 {
   $_SESSION['user_login'] = $login;
   $_SESSION['haslo'] = $haslo;
+  $_SESSION['email'] = $email;
+  $_SESSION['telefon'] = $telefon;
   header("location:addUser.php");
+  
 }
 else
 {
-  echo "Taki użytkownik już istnieje";
+  header("location:errorMatchFound.php");
 }
 
      

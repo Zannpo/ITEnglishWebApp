@@ -5,7 +5,6 @@
   if(file_exists("head.php")) include("head.php");	
 
 ?>
-
 <body id="page-top">
 
 <?php
@@ -14,33 +13,34 @@
 
   <header class="bg-info text-white">
     <div class="container text-center">
-      <h1>Welcome to Scrolling Nav</h1>
-      <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
+      <h1>IT English Web Application </h1>
+      <p class="lead">Pomożemy ci zrozumieć angielski z branży IT!</p>     
+      </p>
     </div>
+
   </header>
-  <?php
-  if ($_SESSION['user_id']<>"")
-  {    
-    echo "<p>Strona po logowaniu</p>";
-    
-    echo "<h2>Witaj ".$_SESSION['login']."!!<h2>";
-  }else
-  {
-    echo "<p>Strona przed logowaniem</p>";
-    echo "<p><a href=\"login.php\" class=\"btn btn-info\">Zaloguj się</a></p>";
-  } 
-?>
+   
   <section id="about">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>About this page</h2>
-          <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
+          <h2>Informacje o nas</h2>
+          <p class="lead">Powstała strona ma na celu ułatwienie nauki słownictwa angielskiego języka angielskiego z branży IT. 
+            Jest tworzona z myślą o każdym kto tylko chce się nauczyć nowych terminów. Mamy nadzieję, że bez względu na wiek czy zainteresowania każdy użytkownik znajdzie tu coś dla siebie. 
+          </p>
           <ul>
-            <li>Clickable nav links that smooth scroll to page sections</li>
-            <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-            <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-            
+            <li>Niedługo również powstanie aplikacja mobilna. Zapraszamy do sprawdzania <i>Google Play!</i></li>
+          
+            <div class="row">
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">Słowo na dziś</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white ">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
             
           </ul>       
         </div>
@@ -52,8 +52,23 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>Services we offer</h2>
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+          <h2>Słowo na dziś</h2>
+          <p class="lead">
+          <p>
+        <?php
+        $query="SELECT * FROM words
+        ORDER BY RAND()
+        LIMIT 1 ";     
+        $results = mysqli_query($link,$query);
+        while($row=mysqli_fetch_array($results)){
+
+        echo "<b>" .$row[wersja_PL]." </b><br>\n";
+        echo "<i>" .$row[wersja_ANG]." </i><br>\n";
+        echo $row[opis_PL]." <br>\n";        
+        } 
+        ?>
+
+          </p>
         </div>
       </div>
     </div>
@@ -63,18 +78,15 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>Contact us</h2>
-          <p class="lead">
+          <h2>Kontakt</h2>
+          <p class="lead">         
           <?php
-            /*$query="SELECT * FROM users";
-            #echo $query;
-            $wynik = mysqli_query($link,$query);
-            while($wiersz=mysqli_fetch_array($wynik)){
-    
-            echo $wiersz[0]." ".$wiersz[haslo]." ".$wiersz[login]."<br>\n";
-            }
-              */
-          
+          echo "W razie pytań zachęcamy do kontaktu.";
+          echo "<br>";
+          echo "<b>Nr telefonu:</b> <i>0-600-500-400</i>";
+          echo "<br>";
+          echo "<b>Adres e-mail:</b> <i>ITEngWApp@gmail.com</i>";         
+                    
           ?>
           </p>
         </div>

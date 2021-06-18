@@ -1,18 +1,22 @@
+<link href="css/login.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 <?php
-  if(file_exists("head.php")) include("head.php");
+session_start();
 ?>
- <link rel="stylesheet" type="text/css" href="css/style.css">  
-<header class="bg-info text-white">
-    <div class="container text-center">
-      <h1>Zakładanie konta</h1>
-     
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Ikonka -->
+    <div class="fadeIn first">
+    <img src="images/united-kingdom.png" id="icon" alt="User Icon" />
     </div>
-  </header>        
-   
 
-<body>
-
-<section id="form">
+<!-- Rejestracja -->
+    <section id="form">
     <div class="container mt-5">
       <div class="row">
         <div class="col-lg-8 mx-auto">
@@ -21,39 +25,53 @@
                
     <form method="POST" action="functions/signingUp.php"> 
     <fieldset>
-<!-- Text input-->
+<!-- Login-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="login">Podaj login</label>  
   <div class="col-md-4">
   <input id="login" name="login" type="text" placeholder="login" class="form-control input-md" required="">
   </div>
 </div>
-<!-- Password input-->
+<!-- Hasło-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="haslo">Podaj hasło</label>
   <div class="col-md-4">
     <input id="haslo" name="haslo" type="password" placeholder="hasło" class="form-control input-md" required="">
     </div>
 </div>
-<!-- Password input-->
+<!-- Hasło-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="powtorzhaslo">Powtórz hasło</label>
   <div class="col-md-4">
     <input id="powtorzhaslo" name="powtorzhaslo" type="password" placeholder="hasło" class="form-control input-md" required="">
     </div>
 </div>
+<!-- E-mail-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="login">Podaj adres email</label>  
+  <div class="col-md-4">
+  <input id="email" name="email" type="email" placeholder="email" class="form-control input-md" required="">
+  </div>
+</div>
+<!-- Telefon-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="login">Wprowadź numer telefonu</label>  
+  <div class="col-md-4">
+  <input id="telefon" name="telefon" type="tel" placeholder="0-123-456-789" pattern="/^[0-9]{10}+$/" class="form-control input-md" required="">
+  </div>
+</div>
 </fieldset>
 
 <div class="form-group row">
     <div class="offset-4 col-8">
-      <button name="submit" type="submit" class="btn btn-primary">Załóż konto</button>
+    <input type="submit" class="fadeIn fifth" value="Utwórz konto">
     </div>
 </form>
 
-</body>
-</section>
-<?php
-  if(file_exists("footer.php")) include("footer.php");
-?>
+    <div id="formFooter">      
+      <a class="underlineHover" href="index.php">Powrót do strony głównej</a>         
+    </div>
+    
 
-
+  </div>
+</div>

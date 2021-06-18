@@ -4,7 +4,12 @@
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-scrolling-nav/blob/master/LICENSE)
  */
  header {
-    padding: 90px 0 40px;
+    padding: 90px 0 20px; 
+    margin:0px;
+  }
+
+  body{
+    margin: 0px;    
   }
   
   section {

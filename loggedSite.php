@@ -4,22 +4,14 @@
   if(file_exists("head.php")) include("head.php");	
 
 ?>
-
-<body id="page-top">
+ <link rel="stylesheet" type="text/css" href="css/style.css">  
+<body>
 
  <?php
    if(file_exists("userNavigation.php")) include("userNavigation.php");	
-
+   if(file_exists("userHeader.php")) include("userHeader.php");	
   
 ?>
-  <header class="bg-info text-white">
-    <div class="container text-center">
-    <h1>Witaj,
-        <?php echo $_SESSION['login']; ?>!
-    </h1>
-      <p class="lead">A landing page template freshly redesigned for Bootstrap 4</p>
-    </div>
-  </header>
  
   <section id="about">
     <div class="container">
@@ -39,10 +31,11 @@
     </div>
   </section>
 
-  <?php 
+
+</body>
+<?php 
   if(file_exists("footer.php")) include("footer.php");
  ?>
-</body>
 
 
 
