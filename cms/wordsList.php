@@ -47,8 +47,7 @@
                             $query="SELECT * FROM words WHERE kat_id='".$_POST['kat_id']."'";      
                         }
                                                    
-                            $wynik = mysqli_query($link,$query);  
-                                      
+                            $result = mysqli_query($link,$query);                                      
                            
 
                             echo "<table class=\"table\">\n";
@@ -66,20 +65,26 @@
 
                             <th>Opis ANG</th>     
                             
-                            <th>Kategoria</th>      
+                            <th>Kategoria</th>   
+                            
+                            <th>Usuń </th>
 
                             </thead>\n";
-                            while($wiersz=mysqli_fetch_array($wynik)){                                
+                            while($row=mysqli_fetch_array($result)){                                
 
                             echo "\t<tr>\n";
-                            echo "<td>" . $wiersz['word_id'] . "</td>";    
+                            echo "<td>" . $row['word_id'] . "</td>";    
                             
-                            echo "<td>" . $wiersz['czesc_mowy'] . "</td>"; 
-                            echo "<td>" . $wiersz['wersja_PL'] . "</td>"; 
-                            echo "<td>" . $wiersz['wersja_ANG'] . "</td>"; 
-                            echo "<td>" . $wiersz['opis_PL'] . "</td>"; 
-                            echo "<td>" . $wiersz['opis_ANG'] . "</td>"; 
-                            echo "<td>" . $wiersz['kat_id'] . "</td>"; 
+                            echo "<td>" . $row['czesc_mowy'] . "</td>"; 
+                            echo "<td>" . $row['wersja_PL'] . "</td>"; 
+                            echo "<td>" . $row['wersja_ANG'] . "</td>"; 
+                            echo "<td>" . $row['opis_PL'] . "</td>"; 
+                            echo "<td>" . $row['opis_ANG'] . "</td>"; 
+                            echo "<td>" . $row['kat_id'] . "</td>"; 
+                            echo '<td><form action="seeProfiles.php" method="post">
+                            <input type="hidden" name="wybrane_id" value="'.$row['word_id'].'">                            
+                            <input type="submit" value="Usuń" name="usun">
+                            </form></td>';
                                                                                    
                            
                             echo "\t</tr>\n";

@@ -209,7 +209,7 @@ input:placeholder {
 .fadeIn.first {
   -webkit-animation-delay: 0.4s;
   -moz-animation-delay: 0.4s;
-  animation-delay: 0.4s;
+  animation-delay: 0.4s;  
 }
 
 .fadeIn.second {
@@ -271,5 +271,5 @@ input:placeholder {
 
 #icon {
   width:30%;
-  height: 28%;
+  height: 18%;
 }

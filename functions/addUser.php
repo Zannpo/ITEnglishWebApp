@@ -19,7 +19,7 @@ if(file_exists("../config/con.fig.php")) require_once("../config/con.fig.php");
  <?php 
 
 //Utworzenie konta użytkownika
-$query = "INSERT INTO users (user_id, login,haslo,uprawnienia) VALUES(NULL,'".$_SESSION['user_login']."','".$_SESSION['haslo']."',1)";
+$query = "INSERT INTO users (user_id, login,haslo,uprawnienia) VALUES(NULL,'".$_SESSION['user_login']."','".$_SESSION['haslo']."','0')";
 
 if(mysqli_query($link, $query)){
     //Utworzenie profilu użytkownika

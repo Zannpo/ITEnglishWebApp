@@ -11,26 +11,28 @@ session_start();
     <!-- Tabs Titles -->
 
     <!-- Ikonka -->
+    <br>
     <div class="fadeIn first">
-    <img src="images/united-kingdom.png" id="icon" alt="User Icon" />
+    <img src="images/united-kingdom.png" id="icon" alt="User Icon"/>
     </div>
 
+    <br>
     <!-- Logowanie -->
     <form method="POST" action="functions/logIn.php">
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" required>
       <input type="password" id="password" class="fadeIn third" name="haslo" placeholder="hasło" required>
+      
+    <br>
       <input type="submit" class="fadeIn fourth" value="Zaloguj się">     
     </form>
-
+    
     <!-- Rejestracja -->
     <form action="signUpForm.php">        
         <input type="submit" class="fadeIn fifth" value="Zarejestruj się">
     </form>
-
-    <!-- Przypomnienie hasła -->
-    <div id="formFooter">
-      <a class="underlineHover" href="remindPasswordForm.php">Nie pamiętasz hasła?</a>    
-      <br>
+    
+    <div id="formFooter">      
+    <br>
       <a class="underlineHover" href="index.php">Powrót do strony głównej</a>         
     </div>
     

@@ -21,13 +21,14 @@ $query = "SELECT * FROM users WHERE login = '".$_POST['login']."' ";
   
         if($wiersz['uprawnienia'] == 0)
         {
-          //Przejście do panelu admina
-          header("location:../cms/index.php");
+          //Przejście do strony zalogowanego użytkownika
+          header("location:../loggedSite.php");
+         
         }
         else
         {
-          //Przejście do strony zalogowanego użytkownika
-          header("location:../loggedSite.php");
+          //Przejście do panelu admina
+          header("location:../cms/index.php");
         }
     
       }

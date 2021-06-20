@@ -1,7 +1,15 @@
-<?php
+﻿<?php
   session_start();
   //if(file_exists("config/con.fig.php")) include("config/con.fig.php");	
-  if(file_exists("config/con.fig.php")) require_once("config/con.fig.php");	
+  
+  if(file_exists("instal/installFirstFile.php"))
+  {
+    header("location:instal/installFirstFile.php");
+  }
+  
+  
+    
+  require_once("config/con.fig.php");	
   if(file_exists("head.php")) include("head.php");	
 
 ?>
@@ -11,10 +19,12 @@
   if(file_exists("scrollingNavigation.php")) include("scrollingNavigation.php");	
  ?>
 
+
   <header class="bg-info text-white">
     <div class="container text-center">
       <h1>IT English Web Application </h1>
-      <p class="lead">Pomożemy ci zrozumieć angielski z branży IT!</p>     
+      <p class="lead">    
+      Pomożemy ci zrozumieć angielski z branży IT!</p>     
       </p>
     </div>
 
@@ -30,18 +40,7 @@
           </p>
           <ul>
             <li>Niedługo również powstanie aplikacja mobilna. Zapraszamy do sprawdzania <i>Google Play!</i></li>
-          
-            <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Słowo na dziś</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white ">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-            
+                    
           </ul>       
         </div>
       </div>
@@ -86,8 +85,12 @@
           echo "<b>Nr telefonu:</b> <i>0-600-500-400</i>";
           echo "<br>";
           echo "<b>Adres e-mail:</b> <i>ITEngWApp@gmail.com</i>";         
-                    
-          ?>
+          echo "<br>";
+         
+          echo "Sprawdź: "      
+          ?>     <a href="https://play.google.com/store?hl=pl&gl=US" class="button">Google Play</a>    
+          
+               
           </p>
         </div>
       </div>

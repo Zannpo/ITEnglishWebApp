@@ -67,7 +67,7 @@
 </fieldset>
 <div class="form-group row">
     <div class="offset-1 col-8">
-    <input type="submit" class="btn btn-info" value="Aktualizuj profil">
+    <input type="submit" class="btn btn-info" value="Dodaj słówko">
     </div>
 </form>
 

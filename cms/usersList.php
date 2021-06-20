@@ -16,45 +16,7 @@
                         //Wyświetlenie wszystkich użytkowników w tabeli
                             $query="SELECT * FROM users";                          
                             $wynik = mysqli_query($link,$query);  
-                                      
-                                                  
-                    
-                            /*
-                            echo "<table border='2'>
-                            <tr>
-
-                            <th>Id</th>
-
-                            <th>Login</th>
-
-                            <th>Hasło</th>
-
-                            <th>Uprawnienia</th>
-
-                            <th>Aktywność</th>
-
-                            </tr>";
-                            while($wiersz=mysqli_fetch_array($wynik))
-                            
-                              {
-                            
-                              echo "<tr>";
-                            
-                              echo "<td>" . $wiersz['user_id'] . "</td>";
-                                                        
-                              echo "<td>" . $wiersz['login'] . "</td>";
-                                                        
-                              echo "<td>" . $wiersz['haslo'] . "</td>";
-                                                        
-                              echo "<td>" . $wiersz['uprawnienia'] . "</td>";
-
-                              echo "<td>" . $wiersz['aktywny'] . "</td>";
-                                                        
-                              echo "</tr>";
-                            
-                              }       
-                              echo "</table>"; */
-
+                              
                             echo "<table class=\"table\">\n";
                             echo "<thead><tr>
                            
